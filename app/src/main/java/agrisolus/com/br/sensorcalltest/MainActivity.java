@@ -86,9 +86,9 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                String Aux = et_endereco.getText() + "cmd=apcfg&ssid=" + et_ssid.getText() + "&password=" + et_pwd.getText();
-                String payload = setTranslate(Aux, Aux.length());
-                requisicao("/?" + payload);
+                String ssid = setTranslate(et_ssid.getText().toString(),et_ssid.getText().toString().length());
+                String pwd = setTranslate(et_pwd.getText().toString(),et_pwd.getText().toString().length());
+                requisicao(et_endereco.getText()+ "/?ssid=" + ssid + "&password=" + pwd);
             }
         });
 

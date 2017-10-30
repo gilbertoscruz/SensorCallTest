@@ -1,168 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp"
-    tools:context="agrisolus.com.br.sensorcalltest.MainActivity">
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TableLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
         android:weightSum="1">
 
-        <TableRow
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:text="Endereço de pesquisa"/>
+
+        <EditText
+            android:id="@+id/et_endereco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="0.7"
+            android:text="192.168.25.32"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/bt_enviar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="Enviar"/>
+
+        <Button
+            android:id="@+id/bt_crono"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5"
+            android:text="Cronometrar"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.05"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:text="Retorno"/>
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="false"
+            android:layout_centerHorizontal="false"
+            android:layout_centerInParent="false"
+            android:layout_centerVertical="false"
+            android:layout_toEndOf="@+id/textView2"
+            android:layout_weight="0.2"
+            android:text="Tempo"/>
+
+        <Chronometer
+            android:id="@+id/chronometer2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentRight="false"
+            android:layout_toEndOf="@+id/textView3"
+            android:layout_weight="0.2"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_weight="0.05"
-            android:weightSum="1">
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1">
 
-            <TableLayout
+            <TextView
+                android:id="@+id/tv_retorno"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="1">
+                android:layout_height="match_parent"/>
 
-                <TableRow
-                    android:layout_weight="0.5"
-                    android:orientation="horizontal">
+        </ScrollView>
 
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.4"
-                        android:text="Endereço de pesquisa"/>
+    </LinearLayout>
 
-                    <EditText
-                        android:id="@+id/et_endereco"
-                        android:layout_width="233dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="5dp"
-                        android:layout_weight="0.6"
-                        android:text="192.168.25.32"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.075"
+        android:orientation="horizontal"
+        android:weightSum="1">
 
-                </TableRow>
+        <TextView
+            android:id="@+id/textSSID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:text="SSID"/>
 
-                <TableRow
-                    android:layout_weight="0.5"
-                    android:orientation="horizontal"
-                    android:weightSum="1">
+        <EditText
+            android:id="@+id/et_SSID"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"/>
+    </LinearLayout>
 
-                    <Button
-                        android:id="@+id/bt_enviar"
-                        android:layout_weight="0.5"
-                        android:text="Enviar"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.075"
+        android:orientation="horizontal"
+        android:weightSum="1">
 
-                    <Button
-                        android:id="@+id/bt_crono"
-                        android:layout_weight="0.5"
-                        android:text="Cronometrar"
-                        android:textAllCaps="false"/>
+        <TextView
+            android:id="@+id/textPWD"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.15"
+            android:text="SENHA"/>
 
-                </TableRow>
+        <EditText
+            android:id="@+id/et_pwd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"/>
 
-            </TableLayout>
+        <Button
+            android:id="@+id/bt_send_cfg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="Enviar"/>
+    </LinearLayout>
 
-        </TableRow>
+    </LinearLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_weight="0.9">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Retorno"/>
-
-                <Chronometer
-                    android:id="@+id/chronometer2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/textView2"/>
-
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/textView2">
-
-                    <TextView
-                        android:id="@+id/tv_retorno"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"/>
-
-                </ScrollView>
-            </RelativeLayout>
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_weight="0.05">
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:weightSum="1">
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.4"
-                    android:weightSum="1">
-
-                    <TextView
-                        android:id="@+id/textSSID"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2"
-                        android:text="SSID"/>
-
-                    <EditText
-                        android:id="@+id/et_SSID"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.8"/>
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_weight="0.4"
-                    android:weightSum="1">
-
-                    <TextView
-                        android:id="@+id/textPWD"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.2"
-                        android:text="SENHA"/>
-
-                    <EditText
-                        android:id="@+id/et_pwd"
-                        android:layout_width="282dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="0.8"/>
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_weight="0.2"
-                    android:weightSum="1">
-
-                    <Button
-                        android:id="@+id/bt_send_cfg"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Enviar"/>
-                </TableRow>
-
-            </TableLayout>
-        </TableRow>
-
-    </TableLayout>
-
-</RelativeLayout>
