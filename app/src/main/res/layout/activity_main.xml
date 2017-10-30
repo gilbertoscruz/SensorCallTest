@@ -7,46 +7,153 @@
     android:padding="5dp"
     tools:context="agrisolus.com.br.sensorcalltest.MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="Endereço de pesquisa" />
-
-    <EditText
-        android:id="@+id/et_endereco"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_marginRight="5dp"
-        android:layout_toStartOf="@+id/bt_enviar" />
-
-    <Button
-        android:id="@+id/bt_enviar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentEnd="true"
-        android:text="Enviar" />
-
-    <ScrollView
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/bt_enviar">
+        android:weightSum="1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <TableRow
+            android:layout_weight="0.05"
+            android:weightSum="1">
 
-            <TextView
-                android:id="@+id/tv_retorno"
+            <TableLayout
+                android:weightSum="1">
+
+                <TableRow
+                    android:layout_weight="0.5">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Endereço de pesquisa"/>
+
+                    <EditText
+                        android:id="@+id/et_endereco"
+                        android:layout_width="233dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:text="192.168.25.32"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_weight="0.5"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/bt_enviar"
+                        android:layout_weight="0.3"
+                        android:text="Enviar"/>
+
+                    <Button
+                        android:id="@+id/bt_crono"
+                        android:layout_weight="0.3"
+                        android:textAllCaps="false"
+                        android:text="Cronometrar"/>
+
+                </TableRow>
+
+            </TableLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="0.9">
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-    </ScrollView>
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Retorno"/>
+
+                <Chronometer
+                    android:id="@+id/chronometer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/textView2"/>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/textView2">
+
+                    <TextView
+                        android:id="@+id/tv_retorno"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </ScrollView>
+            </RelativeLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="0.05">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.4"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/textSSID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:text="SSID"/>
+
+                    <EditText
+                        android:id="@+id/et_SSID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_weight="0.4"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/textPWD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.2"
+                        android:text="SENHA"/>
+
+                    <EditText
+                        android:id="@+id/et_pwd"
+                        android:layout_width="282dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.8"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_weight="0.2"
+                    android:weightSum="1">
+
+                    <Button
+                        android:id="@+id/bt_send_cfg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Enviar"/>
+                </TableRow>
+
+            </TableLayout>
+        </TableRow>
+
+    </TableLayout>
 
 </RelativeLayout>
