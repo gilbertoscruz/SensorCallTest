@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity
             {
                 String ssid = setTranslate(et_ssid.getText().toString(),et_ssid.getText().toString().length());
                 String pwd = setTranslate(et_pwd.getText().toString(),et_pwd.getText().toString().length());
-                requisicao(et_endereco.getText()+ "/?ssid=" + ssid + "&password=" + pwd);
+                requisicao(et_endereco.getText()+ "/?cmd=apcfg&ssid=" + ssid + "&password=" + pwd);
             }
         });
 
